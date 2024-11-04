@@ -6,11 +6,11 @@
 
 # Nome do Projeto
 
-## Nome do Grupo
+## FPCP
 
-## Integrantes: <a href="https://www.linkedin.com/in/victorbarq/">Goku Sayajin</a>, <a href="https://www.linkedin.com/in/victorbarq/">Saitama One</a>, <a href="https://www.linkedin.com/in/victorbarq/">Ikki de Fenix</a>, <a href="https://www.linkedin.com/in/victorbarq/">Yusuke Urameshi</a>, <a href="https://www.linkedin.com/in/victorbarq/">Roronoa Zoro</a>
+## Integrantes: <a href="https://www.linkedin.com/in/guilherme-alves-de-oliveira-e-oliveira-173365278/">Guilherme Alves de Oliveira e Oliveira</a>, <a href="https://www.linkedin.com/in/joãopedro-lima28/">João Pedro Lima Paulo</a>, <a href="https://www.linkedin.com/in/ruan-paulo-46b269288/">Ruan Paulo</a>, <a href="https://www.linkedin.com/in/rafael-ferreira15/">Rafael Ferreira</a>
 
-## Professores Orientadores: <a href="https://www.linkedin.com/in/victorbarq/">Dr. Victor Von Doom</a>, <a href="https://www.linkedin.com/in/victorbarq/">Me. Saitama</a>, <a href="https://www.linkedin.com/in/victorbarq/">Dr. Strange</a>, <a href="https://www.linkedin.com/in/victorbarq/">Me. Yoda</a>, <a href="https://www.linkedin.com/in/victorbarq/">Dr. Gero</a>
+## Professores Orientadores: <a href="https://www.linkedin.com/in/victorbarq/">Victor Bruno Alexander Rosetti de Quiroz</a>, <a href="https://www.linkedin.com/in/professorrodnil/">Rodnil D.</a>, <a href="https://www.escavador.com/sobre/6893981/paula-sanchez-astorino">Paula Sanchez Astorino</a>, <a href="https://www.linkedin.com/in/eduardo-savino-gomes-77833a10/">Eduardo Savino</a>, <a href="https://www.linkedin.com/in/lucymari/">Lucy Mari</a>
 
 ## Descrição
 
