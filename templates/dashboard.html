@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboards de Preços de Combustíveis</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <h1>Dashboards de Preços de Combustíveis</h1>
+
+    <form id="priceVariationForm">
+        <h3>Variação de Preço por Estado</h3>
+        <label for="state">Estado:</label>
+        <select name="state">
+            <option value="SP">SP</option>
+            <option value="RJ">RJ</option>
+        </select>
+        <label for="fuel_type">Tipo de Combustível:</label>
+        <select name="fuel_type">
+            <option value="GERAL">Geral</option>
+            <option value="Gasolina">Gasolina</option>
+            <option value="Etanol">Etanol</option>
+            <option value="Diesel">Diesel</option>
+        </select>
+        <button type="submit">Gerar Gráfico</button>
+    </form>
+
+    <form id="averagePriceForm">
+        <h3>Média de Preços por Ano</h3>
+        <label for="fuel_type">Tipo de Combustível:</label>
+        <select name="fuel_type">
+            <option value="GERAL">Geral</option>
+            <option value="Gasolina">Gasolina</option>
+            <option value="Etanol">Etanol</option>
+            <option value="Diesel">Diesel</option>
+        </select>
+        <button type="submit">Gerar Gráfico</button>
+    </form>
+
+    <form id="fuelPriceComparisonForm">
+        <h3>Comparação de Preços por Tipo de Combustível</h3>
+        <label for="year">Ano:</label>
+        <select name="year">
+            <option value="GERAL">Geral</option>
+            <option value="2019">2019</option>
+            <option value="2020">2020</option>
+            <option value="2021">2021</option>
+            <option value="2022">2022</option>
+            <option value="2023">2023</option>
+            <option value="2024">2024</option>
+        </select>
+        <button type="submit">Gerar Gráfico</button>
+    </form>
+
+    <div id="chartContainer">
+        <h3>Gráfico Gerado:</h3>
+        <img id="chartImage" src="" alt="Gráfico será exibido aqui" style="display:none; max-width: 100%;">
+    </div>
+
+    <script>
+        function handleFormSubmit(event, endpoint) {
+            event.preventDefault();
+            
+            const formData = new FormData(event.target);
+            const params = new URLSearchParams(formData).toString();
+            
+            const url = `${endpoint}?${params}`;
+            
+            document.getElementById('chartImage').src = url + "&timestamp=" + new Date().getTime();
+            document.getElementById('chartImage').style.display = "block";
+        }
+
+        document.getElementById('priceVariationForm').addEventListener('submit', (e) => handleFormSubmit(e, '/price_variation'));
+        document.getElementById('averagePriceForm').addEventListener('submit', (e) => handleFormSubmit(e, '/average_price_per_year'));
+        document.getElementById('fuelPriceComparisonForm').addEventListener('submit', (e) => handleFormSubmit(e, '/fuel_price_comparison'));
+    </script>
+</body>
+</html>
