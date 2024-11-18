@@ -87,50 +87,6 @@ def consulta_dados():
         return jsonify({"error": str(err)}), 500
 
 
-@app.route('/api/grafico', methods=['GET'])
-def grafico():
-    # Construir a URL para a rota /api/consulta com os mesmos parâmetros
-    estado = request.args.get('estado')
-    produto = request.args.get('produto')
-    ano = request.args.get('ano')
-    mes = request.args.get('mes')
-
-    # Construir a URL da consulta com aspas ao redor dos valores
-    consulta_url = f"http://127.0.0.1:5000/api/consulta?estado={estado}&produto={produto}&ano={ano}&mes={mes}"
-    
-    # Fazer a requisição para a rota /api/consulta usando requests
-    response = requests.get(consulta_url)
-    if response.status_code != 200:
-        return "Erro ao consultar dados", 500
-
-    # Extrair os dados da resposta JSON
-    dados = response.json()
-
-    # Verificar se há dados
-    if not dados:
-        return "Nenhum dado encontrado para os filtros aplicados", 404
-
-    # Preparar os dados para o gráfico
-    estados = [item['estado_sigla'] for item in dados]
-    precos = [float(item['Media_mensal_valor_venda']) for item in dados]
-
-    # Gerar o gráfico usando Matplotlib
-    plt.figure(figsize=(10, 5))
-    plt.bar(estados, precos, color='skyblue')
-    plt.xlabel('Estado')
-    plt.ylabel('Preço Médio de Combustível')
-    plt.title('Preço Médio de Combustível por Estado')
-
-    # Salvar o gráfico em um objeto BytesIO em vez de um arquivo
-    img = io.BytesIO()
-    plt.savefig(img, format='png')
-    img.seek(0)  # Voltar ao início do arquivo para leitura
-
-    # Retornar a imagem como uma resposta HTTP
-    return send_file(img, mimetype='image/png')
-
-if __name__ == '__main__':
-    app.run(debug=True)
 
 
 

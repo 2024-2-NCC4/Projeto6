@@ -1,0 +1,34 @@
+library(dplyr)
+library(openxlsx)
+
+#gerar uma tabela de média anual por produto
+
+DADOS <- DADOS %>%
+  mutate(Ano = lubridate::year(as.Date(Data.da.Coleta, format = "%d/%m/%Y")))
+
+
+media_por_ano_V <- DADOS %>%
+  group_by(Ano, Produto) %>%
+  summarize(Media_do_valor_de_venda = mean(Valor.de.Venda, na.rm = TRUE)) %>%
+  ungroup()
+
+# Filtro para retirar os combustíveis não utilizados no estudo
+tabela_analise_horizontal <- media_por_ano_V %>%
+  filter(!Produto %in% c("DIESEL S10", "DIESEL S50", "ETANO", "GASOLINA ADITIVADA")) %>%
+  arrange(Produto, Ano) %>%  
+  group_by(Produto) %>%      
+  mutate(
+    variacao_percentual = (Media_do_valor_de_venda - lag(Media_do_valor_de_venda)) / lag(Media_do_valor_de_venda) * 100,
+    interpretacao = case_when(
+      variacao_percentual > 0 ~ "Aumento em relação ao ano anterior",
+      variacao_percentual < 0 ~ "Redução em relação ao ano anterior",
+      TRUE ~ "Estável em relação ao ano anterior"
+    )
+  ) %>%
+  ungroup()  
+
+
+print(tabela_analise_horizontal)
+
+
+write.xlsx(tabela_analise_horizontal, "tabela_analise_horizontal.xlsx")
