@@ -4,9 +4,9 @@
 <a href= "https://www.fecap.br/"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhZPrRa89Kma0ZZogxm0pi-tCn_TLKeHGVxywp-LXAFGR3B1DPouAJYHgKZGV0XTEf4AE&usqp=CAU" alt="FECAP - Fundação de Comércio Álvares Penteado" border="0"></a>
 </p>
 
-# Combusearch
+# Nome do Projeto: Combusearch
 
-## FPCP
+## Grupo: FPCP
 
 ## Integrantes: <a href="https://www.linkedin.com/in/guilherme-alves-de-oliveira-e-oliveira-173365278/">Guilherme Alves de Oliveira e Oliveira</a>, <a href="https://www.linkedin.com/in/joãopedro-lima28/">João Pedro Lima Paulo</a>, <a href="https://www.linkedin.com/in/ruan-paulo-46b269288/">Ruan Paulo</a>, <a href="https://www.linkedin.com/in/rafael-ferreira15/">Rafael Ferreira</a>
 
